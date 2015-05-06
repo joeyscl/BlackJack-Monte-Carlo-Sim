@@ -5,7 +5,6 @@ from PLAYERHAND import PLAYERHAND
 from HOUSEHAND import HOUSEHAND
 import xlrd
 
-#file_location = "D:/Users/HandsomeNerd/Dropbox/Python33/BJ Sim/basicstrategy.xlsx"
 workbook = xlrd.open_workbook('basicstrategy.xlsx')
 hardtotalsheet = workbook.sheet_by_index(0)
 softtotalsheet = workbook.sheet_by_index(1)
