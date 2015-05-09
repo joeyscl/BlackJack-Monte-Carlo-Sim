@@ -7,7 +7,7 @@ You can expect 1 million games to take 30 ~ 90seconds on modern computers depend
 
 NOTES ON RESULTS:
 After running 1 trial of 500 million games, the results I get are comparable to the theoretical results
-as per Wikipedia of ~0.6 in the house's favour.
+as per Wikipedia of ~0.6% in the house's favour.
 (http://en.wikipedia.org/wiki/Blackjack#Rule_variations_and_their_consequences_for_the_house_edge)
 
 NOTES ON CARD COUNTING:
