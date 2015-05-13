@@ -1,5 +1,10 @@
 This is a program for computing the long run return of the game of black jack.
 
+NOTES ON STRATEGY:
+The single player in the simulation makes plays based on "basicstrategy.xlsx" which is the optimal strategy 
+without variations in betting pattern (which is only beneficial if card-counting - see below).
+Simply put, basicstrategy.xlsx describes the optimal strategy a player can employ.
+
 NOTES ON RUN TIME:
 It takes computer about 8 hours to simulate 1 Billion (1E9) individual games running on 4 processes.
 You can expect 1 million games to take 30 ~ 90seconds on modern computers depending on how many processes you use.
