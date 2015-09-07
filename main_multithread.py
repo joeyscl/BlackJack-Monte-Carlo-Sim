@@ -25,14 +25,13 @@ if __name__ == "__main__":
 
     while True:
 
-        start_time = time.time()
-
         print("This program calculates the ROI of Blackjack (assume zero deck penetration) using Monte Carlo method")
         trials = int(input("How many trials?"))
         games = int(input("How many games per trial?"))
         proc =  int(input("Number of processes would you like to utilize? (2~4 recommended)"))
         print("Running Monte Carlo blackjack simulation of %i trials of %i games using %i processes." %(trials, games, proc))
 
+        start_time = time.time()
         #Set up list of processes we want to run (divvy up # of games into # of threads to make each trial faster)
         games_per_process = games // proc
 
@@ -46,8 +45,9 @@ if __name__ == "__main__":
             print('The ROI for trial #', eachtrial+1, ' is ', float("{0:.4f}".format(ROI)), '%')
             print('Trial run time: ', round(trialtime,4), " seconds")
             totalresult = totalresult + ROI
-        print('\nThe overall ROI is', totalresult/trials, '%')
-
+            print('')
+            
+        print('The overall ROI is', totalresult/trials, '%')
 
         duration = time.time() - start_time
         if duration < 300: #less than 300 seconds (aka 5 minutes)

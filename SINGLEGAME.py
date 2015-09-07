@@ -3,21 +3,30 @@ __author__ = 'Joey'
 from CARD import CARD
 from PLAYERHAND import PLAYERHAND
 from HOUSEHAND import HOUSEHAND
-import xlrd
+# import xlrd
 
-workbook = xlrd.open_workbook('basicstrategy.xlsx')
-hardtotalsheet = workbook.sheet_by_index(0)
-softtotalsheet = workbook.sheet_by_index(1)
-pairssheet     = workbook.sheet_by_index(2)
+# workbook = xlrd.open_workbook('basicstrategy.xlsx')
+# hardtotalsheet = workbook.sheet_by_index(0)
+# softtotalsheet = workbook.sheet_by_index(1)
+# pairssheet     = workbook.sheet_by_index(2)
 
-hardtotal = [[hardtotalsheet.cell_value(r,c) for c in range(1,hardtotalsheet.ncols)] \
-             for r  in range(1,hardtotalsheet.nrows)]
+# hardtotal = [[hardtotalsheet.cell_value(r,c) for c in range(1,11)] \
+#              for r  in range(1,17)]
 
-softtotal = [[softtotalsheet.cell_value(r,c) for c in range(1,softtotalsheet.ncols)] \
-             for r  in range(1,softtotalsheet.nrows)]
+# softtotal = [[softtotalsheet.cell_value(r,c) for c in range(1,11)] \
+#              for r  in range(1,9)]
 
-pairs = [[pairssheet.cell_value(r,c) for c in range(1,pairssheet.ncols)] \
-             for r  in range(1,pairssheet.nrows)]
+# pairs = [[pairssheet.cell_value(r,c) for c in range(1,11)] \
+#              for r  in range(1,11)]
+
+
+# Pre-parsed results from 'basicstrategy.xlsx' Switch to the code ABOVE if you wish to change the strategy.
+# For more details: https://en.wikipedia.org/wiki/Blackjack#Basic_strategy
+hardtotal = [['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'Rs'], ['S', 'S', 'S', 'S', 'S', 'H', 'H', 'Rh', 'Rh', 'Rh'], ['S', 'S', 'S', 'S', 'S', 'H', 'H', 'H', 'Rh', 'Rh'], ['S', 'S', 'S', 'S', 'S', 'H', 'H', 'H', 'Rh', 'Rh'], ['S', 'S', 'S', 'S', 'S', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'S', 'S', 'S', 'H', 'H', 'H', 'H', 'H'], ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'], ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'H', 'H'], ['H', 'D', 'D', 'D', 'D', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H']]
+
+softtotal = [['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['D', 'D', 'D', 'D', 'D', 'S', 'S', 'H', 'H', 'H'], ['H', 'D', 'D', 'D', 'D', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'D', 'D', 'D', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'D', 'D', 'D', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'D', 'D', 'H', 'H', 'H', 'H', 'H'], ['H', 'H', 'H', 'D', 'D', 'H', 'H', 'H', 'H', 'H']]
+
+pairs = [['SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP'], ['S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'], ['SP', 'SP', 'SP', 'SP', 'SP', 'S', 'SP', 'SP', 'S', 'S'], ['SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'Rsp'], ['SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'H', 'H', 'H', 'H'], ['SP', 'SP', 'SP', 'SP', 'SP', 'H', 'H', 'H', 'H', 'H'], ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'H', 'H'], ['H', 'H', 'H', 'SP', 'SP', 'H', 'H', 'H', 'H', 'H'], ['SP', 'SP', 'SP', 'SP', 'SP', 'H', 'H', 'H', 'H', 'H'], ['SP', 'SP', 'SP', 'SP', 'SP', 'SP', 'H', 'H', 'H', 'H']]
 
 def SingleGame(playerhand,househand):
 
@@ -218,23 +227,24 @@ def SingleGame(playerhand,househand):
         return Player_Action(playerhand,househand,playerdecision)
 
 
+# for debugging
 
+# print(hardtotal)
+# print(softtotal)
+# print(pairs)
 
+# c1= CARD('A')
+# c2= CARD('A')
 
-''' for debugging
-c1= CARD('A')
-c2= CARD('A')
+# c3= CARD('Q')
+# c4= CARD('T')
+# c5= CARD('A')
 
-c3= CARD('Q')
-c4= CARD('T')
-c5= CARD('A')
+# househand = HOUSEHAND([c1,c2])
+# playerhand = PLAYERHAND([c3,c4])
+# print(househand.housefinalstate)
+# print(SingleGame(playerhand,househand))
 
-househand = HOUSEHAND([c1,c2])
-playerhand = PLAYERHAND([c3,c4])
-print(househand.housefinalstate)
-print(SingleGame(playerhand,househand))
-
-'''
 
 
 
