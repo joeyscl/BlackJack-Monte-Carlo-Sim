@@ -25,7 +25,8 @@ if __name__ == "__main__":
 
     while True:
 
-        print("This program calculates the ROI of Blackjack (assume zero deck penetration) using Monte Carlo method")
+        print("This program calculates the ROI of Blackjack using Monte Carlo method")
+        print("")
         trials = int(input("How many trials?"))
         games = int(input("How many games per trial?"))
         proc =  int(input("Number of processes would you like to utilize? (2~4 recommended)"))

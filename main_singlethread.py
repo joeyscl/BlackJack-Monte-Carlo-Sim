@@ -7,6 +7,8 @@ if __name__ == "__main__":
 
     while(True):
         
+        print("This program calculates the ROI of Blackjack (assume zero deck penetration) using Monte Carlo method")
+        print("")
         trials = int(input("How many trials?"))
         games = int(input("How many games per trial?"))
         print("Running Monte Carlo blackjack simulation of %i trials of %i games" %(trials, games))
