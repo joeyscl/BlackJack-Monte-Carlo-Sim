@@ -1,4 +1,4 @@
-This is a program for computing the long run return of the game of black jack.
+This is a Python3 program for computing the long run return of the game of black jack.
 
 NOTES ON STRATEGY:
 The single player in the simulation makes plays based on "basicstrategy.xlsx" which is the optimal strategy 
